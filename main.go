@@ -2,19 +2,15 @@ package main
 
 import "fmt"
 
+type checkingAccount struct {
+	user           string
+	agencyNumber   int
+	accountUser    int
+	balanceAccount float64
+}
+
 func main() {
-	var user string = "Alan"
-	var agencyNumber int = 589
-	var accountUser int = 123456
-	var balanceAccount float64 = 125.5
-
-	fmt.Println(user, agencyNumber, accountUser, balanceAccount)
-
-	var user1 string = "Fulano"
-	var agencyNumber1 int = 555
-	var accountUser1 int = 111333
-	var balanceAccount1 float64 = 200
-
-	fmt.Println(user1, agencyNumber1, accountUser1, balanceAccount1)
-
+	alanAccount := checkingAccount{user: "Alan", agencyNumber: 589, accountUser: 123456, balanceAccount: 125.5}
+	fulanoAccount := checkingAccount{user: "Fulano", agencyNumber: 555, accountUser: 111222, balanceAccount: 200.5}
+	fmt.Println(alanAccount, fulanoAccount)
 }
