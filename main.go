@@ -13,7 +13,7 @@ func main() {
 	var user1 string = "Fulano"
 	var agencyNumber1 int = 555
 	var accountUser1 int = 111333
-	var balanceAccount1 float64 = 200
+	var balanceAccount1 float64 = 200.9
 
 	fmt.Println(user1, agencyNumber1, accountUser1, balanceAccount1)
 
