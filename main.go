@@ -9,8 +9,34 @@ type checkingAccount struct {
 	balanceAccount float64
 }
 
+func (c *checkingAccount) toWithdraw(withdrawAccount float64) string {
+	getCash := withdrawAccount > 0 && withdrawAccount <= c.balanceAccount
+	if getCash {
+		c.balanceAccount -= withdrawAccount
+		return "saque realizado com sucesso"
+	} else {
+		return "Saldo insificiente"
+	}
+}
+
+func (c *checkingAccount) toDeposite(upCash float64) string {
+	depositCash := upCash > 1 && upCash >= c.balanceAccount
+	if depositCash {
+		c.balanceAccount += upCash
+		return "deposito ralizado"
+	} else {
+		return "deposito não efetuado"
+	}
+}
+
 func main() {
-	alanAccount := checkingAccount{user: "Alan", agencyNumber: 589, accountUser: 123456, balanceAccount: 125.5}
-	ciclanoAccount := checkingAccount{"Ciclano", 777, 654321, 521.5}
-	fmt.Println(alanAccount, ciclanoAccount)
+	silviaAccount := checkingAccount{}
+	silviaAccount.user = "Silvia"
+	silviaAccount.balanceAccount = 500
+
+	fmt.Println(silviaAccount.balanceAccount)
+
+	fmt.Println(silviaAccount.toDeposite(600))
+
+	fmt.Println("Saldo atual:", silviaAccount.balanceAccount)
 }
