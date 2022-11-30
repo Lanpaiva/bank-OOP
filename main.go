@@ -12,5 +12,6 @@ type checkingAccount struct {
 func main() {
 	alanAccount := checkingAccount{user: "Alan", agencyNumber: 589, accountUser: 123456, balanceAccount: 125.5}
 	fulanoAccount := checkingAccount{user: "Fulano", agencyNumber: 555, accountUser: 111222, balanceAccount: 200.5}
-	fmt.Println(alanAccount, fulanoAccount)
+	ciclanoAccount := checkingAccount{"Ciclano", 777, 654321, 521.5}
+	fmt.Println(alanAccount, fulanoAccount, ciclanoAccount)
 }
