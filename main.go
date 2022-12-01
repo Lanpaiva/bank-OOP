@@ -20,10 +20,10 @@ func (c *checkingAccount) toWithdraw(withdrawAccount float64) string {
 }
 
 func (c *checkingAccount) toDeposite(upCash float64) string {
-	depositCash := upCash > 1 && upCash >= c.balanceAccount
+	depositCash := upCash >= 1 && upCash < c.balanceAccount
 	if depositCash {
 		c.balanceAccount += upCash
-		return "deposito ralizado"
+		return "deposito realizado"
 	} else {
 		return "deposito não efetuado"
 	}
@@ -36,7 +36,7 @@ func main() {
 
 	fmt.Println(silviaAccount.balanceAccount)
 
-	fmt.Println(silviaAccount.toDeposite(600))
+	fmt.Println(silviaAccount.toDeposite(0))
 
 	fmt.Println("Saldo atual:", silviaAccount.balanceAccount)
 }
