@@ -2,17 +2,12 @@ package main
 
 import (
 	"fmt"
-	c "github/bank-OOP/account"
+	"github/bank-OOP/accounts"
 )
 
 func main() {
-	silviaAccount := c.CheckingAccount{User: "Silvia", BalanceAccount: 500}
-	gustavoAccount := c.CheckingAccount{User: "Gustavo", BalanceAccount: 100}
+	contEx := accounts.CheckingAccount{}
+	contEx.ToDeposite(100)
 
-	status := silviaAccount.Transf(500, &gustavoAccount)
-
-	fmt.Println(status)
-
-	fmt.Println(silviaAccount, gustavoAccount)
-
+	fmt.Println(contEx.GetBalance())
 }
