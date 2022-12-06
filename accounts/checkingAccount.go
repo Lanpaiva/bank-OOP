@@ -9,13 +9,13 @@ type CheckingAccount struct {
 	balanceAccount float64
 }
 
-func (c *CheckingAccount) ToWithdraw(withdrawAccount float64) (string, float64) {
+func (c *CheckingAccount) ToWithDraw(withdrawAccount float64) string {
 	getCash := withdrawAccount > 0 && withdrawAccount <= c.balanceAccount
 	if getCash {
 		c.balanceAccount -= withdrawAccount
-		return "saque realizado com sucesso:", c.balanceAccount
+		return "saque realizado com sucesso:"
 	} else {
-		return "Saldo insificiente:", c.balanceAccount
+		return "Saldo insificiente:"
 	}
 }
 
